@@ -31,8 +31,8 @@ class ListTodoAdapter(val todos: MutableList<Todo>): RecyclerView.Adapter<ListTo
     override fun onBindViewHolder(holder: CardViewTodo, position: Int) {
         val todo = todos.get(position)
         holder.nomeLista?.setText(todo.name)
-        holder.criado?.setText(todo.create)
-        holder.modificado?.setText(todo.modify)
+        holder.criado?.setText("criado em: ${todo.create}")
+        holder.modificado?.setText("modificado: ${todo.modify ?: "null"}")
     }
 
     override fun getItemCount() = todos.size

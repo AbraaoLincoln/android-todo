@@ -4,27 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:elevation="10dp"
     tools:context=".activity.CardTodoActivity">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="409dp"
+        android:layout_width="180dp"
         android:layout_height="wrap_content"
-        android:paddingStart="16dp"
+        android:layout_margin="10dp"
+        app:cardElevation="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.062"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.024">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@android:color/holo_orange_dark"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textViewNomeLista"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp"
+                android:layout_marginBottom="2dp"
+                android:background="@color/white"
+                android:gravity="center"
                 android:text="@string/nomeLista"
                 android:textSize="20sp" />
 
@@ -32,6 +39,7 @@
                 android:id="@+id/textViewCriado"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/white"
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
                 android:text="@string/criado"
@@ -41,6 +49,7 @@
                 android:id="@+id/textViewModificado"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/white"
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
                 android:text="@string/modificado"

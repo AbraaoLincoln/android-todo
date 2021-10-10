@@ -1,7 +1,9 @@
 package com.example.todo.activity
 
+import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.todo.R
@@ -21,11 +23,10 @@ class MainActivity : AppCompatActivity() {
         dbHelper = TodoDBHelper(applicationContext)
         val todoDao = TodoDAO(dbHelper.writableDatabase, dbHelper.readableDatabase)
 
-        //todoDao.createTodo("lista1")
-        //todoDao.createTodo("lista2")
-        //todoDao.createTodo("lista3")
-
-        val layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(applicationContext)
+        //val layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(applicationContext)
+        val orientation = resources.configuration.orientation
+        val spanCount = if (orientation == Configuration.ORIENTATION_PORTRAIT) { 2 } else { 3 }
+        val layoutManager: RecyclerView.LayoutManager = GridLayoutManager(applicationContext, spanCount)
         rc.layoutManager = layoutManager
         rc.adapter = ListTodoAdapter(todoDao.loadTodos())
 
@@ -33,7 +34,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onDestroy() {
-       // if(dbHelper != null) dbHelper.close()
+        if(dbHelper != null) dbHelper.close()
         super.onDestroy()
     }
 }
