@@ -12,4 +12,7 @@
     <string name="modificado">modificado em:</string>
     <string name="criado">criado em:</string>
     <string name="nomeLista">nome da lista</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="addTodoHint">todo name</string>
 </resources>

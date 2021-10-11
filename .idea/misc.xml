@@ -6,6 +6,7 @@
         <entry key="app/src/main/res/layout/activity_card_todo.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.26207906295754024" />
         <entry key="app/src/main/res/layout/activity_todo_list.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/layout/fragment_input_add_todo.xml" value="0.35572916666666665" />
       </map>
     </option>
   </component>
