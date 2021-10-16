@@ -8,6 +8,7 @@
     tools:context=".activity.CardTodoActivity">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewTodo"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"

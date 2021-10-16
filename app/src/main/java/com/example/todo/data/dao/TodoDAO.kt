@@ -26,7 +26,7 @@ class TodoDAO(val dbW: SQLiteDatabase, val dbR: SQLiteDatabase): TodoInterface {
         values.put(TodoDB.TableTodo.NAME, todo.name)
         values.put(TodoDB.TableTodo.MODIFY_DATE, LocalDate.now().toString())
 
-        val selection = "${TodoDB.TableTodo.ID} = ?1"
+        val selection = "${TodoDB.TableTodo.ID} = ?"
         val selectionAgrs = arrayOf(todo.id.toString())
 
         val idTodoUpdate = dbW.update(TodoDB.TableTodo.TABLE_NAME, values, selection, selectionAgrs)
@@ -38,7 +38,7 @@ class TodoDAO(val dbW: SQLiteDatabase, val dbR: SQLiteDatabase): TodoInterface {
         val values = ContentValues()
         values.put(TodoDB.TableTodo.MODIFY_DATE, LocalDate.now().toString())
 
-        val selection = "${TodoDB.TableTodo.ID} = ?1"
+        val selection = "${TodoDB.TableTodo.ID} = ?"
         val selectionAgrs = arrayOf(todo.id.toString())
 
         val idTodoUpdate = dbW.update(TodoDB.TableTodo.TABLE_NAME, values, selection, selectionAgrs)
@@ -47,9 +47,9 @@ class TodoDAO(val dbW: SQLiteDatabase, val dbR: SQLiteDatabase): TodoInterface {
     }
 
     override fun deleteTodo(todo: Todo): Int {
-        val selection = "${TodoDB.TableTodo.ID} = ?1"
+        val selection = "${TodoDB.TableTodo.ID} = ?"
         val selectionAgrs = arrayOf(todo.id.toString())
-
+        Log.i("id to delete", todo.id.toString())
         val idTodoDeleted = dbW.delete(TodoDB.TableTodo.TABLE_NAME, selection, selectionAgrs)
 
         return idTodoDeleted
