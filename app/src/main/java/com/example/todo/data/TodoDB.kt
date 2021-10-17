@@ -3,7 +3,7 @@ package com.example.todo.data
 
 object TodoDB {
     const val DB_NAME = "todo"
-    const val DB_VERSION = 2
+    const val DB_VERSION = 3
 
     const val createTableTodo = "CREATE TABLE IF NOT EXISTS ${TableTodo.TABLE_NAME} (" +
                                 "${TableTodo.ID} INTEGER PRIMARY KEY, " +
@@ -28,7 +28,7 @@ object TodoDB {
     }
 
     object TableTask {
-        const val TABLE_NAME = "tak"
+        const val TABLE_NAME = "task"
         const val ID = "id"
         const val NAME = "name"
         const val DONE = "done"

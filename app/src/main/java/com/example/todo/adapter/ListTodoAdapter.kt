@@ -1,6 +1,7 @@
 package com.example.todo.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,7 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.todo.R
 import com.example.todo.activity.MainActivity
+import com.example.todo.activity.TaskActivity
 import com.example.todo.data.entity.Todo
 
 class ListTodoAdapter(val context:Context, val todos: MutableList<Todo>): RecyclerView.Adapter<ListTodoAdapter.CardViewTodo>() {
@@ -24,6 +26,12 @@ class ListTodoAdapter(val context:Context, val todos: MutableList<Todo>): Recycl
         lateinit var todoSelected: Todo
 
         init {
+
+            cardViewTodo.setOnClickListener { view ->
+                mainActivity.todoSelected = this.todoSelected
+                mainActivity.startTaskActivity()
+            }
+
             cardViewTodo.setOnLongClickListener{ view ->
 
                 try {

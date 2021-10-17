@@ -5,6 +5,8 @@
       <map>
         <entry key="app/src/main/res/layout/activity_card_todo.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.26207906295754024" />
+        <entry key="app/src/main/res/layout/activity_task.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/layout/activity_task_item.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/activity_todo_list.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/fragment_input_add_todo.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/menu/itens_overflowmenu_toolbar.xml" value="0.35572916666666665" />

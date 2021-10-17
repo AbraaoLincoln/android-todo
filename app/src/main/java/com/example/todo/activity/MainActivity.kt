@@ -1,5 +1,6 @@
 package com.example.todo.activity
 
+import android.content.Intent
 import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -50,6 +51,11 @@ class MainActivity : AppCompatActivity() {
             e.printStackTrace()
             throw ClassCastException(("cast erro"))
         }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putSerializable("todoSelected", todoSelected)
     }
 
     override fun onDestroy() {
@@ -130,9 +136,9 @@ class MainActivity : AppCompatActivity() {
         updateRecyclerView()
     }
 
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-        outState.putSerializable("todoSelected", todoSelected)
-
+    fun startTaskActivity() {
+        val intent = Intent(this, TaskActivity::class.java)
+        intent.putExtra("todoName", todoSelected)
+        startActivity(intent)
     }
 }
